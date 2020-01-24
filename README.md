@@ -85,9 +85,9 @@ development.
 
   ```java
   class AdventureGame {
-    AdventureGame(Map filesystem, Stream logger) {
-      this.logger = logger
-      this.filesystem = filesystem
+    AdventureGame(Map<String, String> filesystem, WriteStream log) {
+      this.log = log;
+      this.filesystem = filesystem;
     }
 
     clockTick(Integer millisElapsed) {
