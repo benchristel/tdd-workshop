@@ -6,15 +6,15 @@ development.
 ## What's included
 
 - how to isolate test subjects for unit testing
-- the differences between unit, integration, and integrated
-  tests
-- a discussion of what can't easily be tested (e.g. memory
-  usage, in many languages)
+- the spectrum of unit, integration, and integrated
+  testing
+- a discussion of the limitations of TDD
+  (Dijkstra quote about testing being unable to demonstrate the absence of bugs)
+  and what can't easily be tested (e.g. memory usage, in many languages)
 - a discussion of myths about TDD
 - dependency injection and dependency inversion
-- how to use the Factory pattern in the context of
-  dependency injection
 - how to architect a program for testability
+- using TDD to reveal edge cases that are missing from user stories
 
 ## What's not included
 
@@ -30,23 +30,29 @@ development.
 - (15 minutes) brief talk on the motivations behind
   test-driven development and the red-green-refactor
   workflow.
-- (2 hours) mob programming on (what?)
-  - a json pretty-printer?
-  - a y-combinator?
-  - a server report generator
-    - given a list of hostnames in a file
-    - and a REST API client that checks whether a host is working
-    - output a report file containing a list of working hosts and a list of non-working hosts
+- (2 hours) mob programming on a **choose-your-own-adventure game engine.**
+  (Why this project? Because it involves both interaction with side-effecting systems (the filesystem, terminal I/O, and time) and data transformation, without involving undue complexity.)
 
-  - choose-your-own-adventure game engine
-    - read file and display it
-    - ask the player to choose an option
-    - read another file and display it based on what they
-      chose
-    - in some rooms, the player wins - show a special screen
-    - in some rooms, the player loses - show a special screen
-    - some rooms have a time limit. If the player doesn't
-      respond within the time limit, they lose!
+  - (5 minutes) present a live demo of the game, so participants get a sense for how it will work.
+  - tell them "this isn't a real implementation of the game, but a mockup designed to give you a sense of how the real
+    game should work. Our task is to implement the game. We have a walking skeleton already built for us" (explain the
+    concept of a walking skeleton)
+  - show them this backlog of user stories:
+    - The game launches when I run `adventure-game` at the command line
+      (Perhaps this first story should already be done, so we don't have to spend time building the walking skeleton.)
+    - I see the starting room's text when I launch the game
+    - I can navigate between rooms with the keyboard
+    - I do not see the room filenames printed to the terminal
+    - I can win the game
+    - I can lose the game
+    - I do not see the win/lose directives printed to the terminal
+    - I lose the game if I overstay a room's time limit
+    - I do not see the time limit directives printed to the terminal
+  - Start with the first undelivered story. "What test would you write?"
+    - discuss what boundary is appropriate to test at
+    - is it okay for the test to invoke the actual game executable? why or why not?
+      - we might want to avoid building the executable if unit tests are failing
+    - is it okay for the test to read actual files from the filesystem? Why or why not?
 - (30 minutes) debrief and time for questions
 
 ## Possible process for testable architecture
