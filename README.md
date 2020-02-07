@@ -107,9 +107,9 @@ programming strategies like immutability and functional purity.
 
   ```java
   class AdventureGame {
-    AdventureGame(Map<String, String> filesystem, WriteStream log) {
+    AdventureGame(Map<String, String> persistentDataStore, WriteStream log) {
       this.log = log;
-      this.filesystem = filesystem;
+      this.store = persistentDataStore;
     }
 
     clockTick(Integer millisElapsed) {
