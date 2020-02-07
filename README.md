@@ -1,7 +1,18 @@
 # TDD Workshop
 
-A three hour, interactive workshop to teach test-driven
-development.
+A three hour, interactive workshop to teach advanced test-driven
+development concepts.
+
+## Prerequisites
+
+Participants should already have at least some hands-on experience with TDD and
+unit testing (i.e. writing test
+programs that directly invoke units of production code, rather
+than testing a product through the user interface).
+
+The facilitator should additionally be familiar with OOP, the SOLID
+design principles, and the benefits and tradeoffs of functional
+programming strategies like immutability and functional purity.
 
 ## What's included
 
@@ -53,6 +64,11 @@ development.
     - is it okay for the test to invoke the actual game executable? why or why not?
       - we might want to avoid building the executable if unit tests are failing
     - is it okay for the test to read actual files from the filesystem? Why or why not?
+      - using the actual filesystem makes it harder to test multiple scenarios
+        (e.g. what happens if there are no files?)
+      - by separating the test code from the test data, it becomes harder to understand
+        what is actually being tested. The test and the data must be updated in sync.
+        It's hard to see which data goes with which test.
 - (30 minutes) debrief and time for questions
 
 ## Possible process for testable architecture
