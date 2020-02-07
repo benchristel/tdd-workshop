@@ -139,3 +139,8 @@ programming strategies like immutability and functional purity.
 - Some libraries and frameworks make code harder to test.
   What are some red flags to look for when choosing a
   library/framework?
+- What are the benefits of TDD? Some popular incorrect answers:
+  - ~~it proves your code is correct~~
+  - ~~it automatically results in well-designed code and tests~~
+- What would we lose by writing tests after the code is "complete"?
+  What (if anything) would we gain?
