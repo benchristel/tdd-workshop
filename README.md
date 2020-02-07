@@ -84,6 +84,8 @@ programming strategies like immutability and functional purity.
   - commutativity (order of operands does not matter, as in set intersection)
   - idempotency (doing something once is equivalent to doing it any number of times—e.g. setting a pixel in a graphics buffer)
   - nilpotency (doing something has no observable effect)
+  - latching (first write wins vs. last write wins)
+  - iteration order (first-in-first-out (FIFO) vs. last-in-first-out (LIFO) vs. unspecified order)
 3. Decide which responsibilities will be assigned to the
   system under test, and which will be assigned to other
   systems. E.g. the responsibility of figuring out which
